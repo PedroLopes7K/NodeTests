@@ -1,37 +1,40 @@
-class Carrinho {
+class Cart {
   constructor() {
-    this.itens = [];
-    this.subtotal = null;
-    this.frete = null;
-    this.total = null;
+    this.itens = []
+    this.subtotal = null
+    this.deliveryFee = null
+    this.total = null
   }
 
-  adiciona(item) {
-    this.itens.push(item);
+  add(item) {
+    this.itens.push(item)
   }
 
-  adicionaFrete(valor) {
-    this.frete = valor;
+  addDeliveryFee(value) {
+    this.deliveryFee = value
   }
 
-  calculaTotal() {
-    this.subtotal = this.itens.reduce((acum, item) => acum + item.pegaValorTotalItem(), 0);
-    return this.subtotal + this.frete;
+  calculateTotal() {
+    this.subtotal = this.itens.reduce(
+      (acum, item) => acum + item.getTotalValueOfItem(),
+      0
+    )
+    return this.subtotal + this.deliveryFee
   }
 
-  finalizaCompra() {
+  finishPurchase() {
     if (this.itens.length === 0) {
-      throw new Error('Carrinho de compras vazio');
+      throw new Error('Shopping cart empty')
     }
 
-    this.total = this.calculaTotal();
+    this.total = this.calculateTotal()
 
     return {
       subtotal: this.subtotal,
-      frete: this.frete,
-      total: this.total,
-    };
+      deliveryFee: this.deliveryFee,
+      total: this.total
+    }
   }
 }
 
-export default Carrinho;
+export default Cart

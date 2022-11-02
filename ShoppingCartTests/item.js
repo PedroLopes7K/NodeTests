@@ -1,13 +1,13 @@
 class Item {
-  constructor(nome, valor, quantidade) {
-    this.nome = nome;
-    this.valor = valor;
-    this.quantidade = quantidade;
+  constructor(name, value, quantity) {
+    this.name = name
+    this.value = value
+    this.quantity = quantity
   }
 
-  pegaValorTotalItem() {
-    return this.quantidade * this.valor;
+  getTotalValueOfItem() {
+    return this.quantity * this.value
   }
 }
 
-export default Item;
+export default Item

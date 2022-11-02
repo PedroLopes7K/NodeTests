@@ -1,18 +1,18 @@
-import Carrinho from './carrinho.js';
-import Item from './item';
+import Cart from './carrinho.js'
+import Item from './item.js'
 
-const carrinho = new Carrinho();
+const cart = new Cart()
 
-carrinho.adiciona(new Item('Maçã', 1, 3));
-carrinho.adiciona(new Item('Banana', 1.4, 5));
-carrinho.adiciona(new Item('Melancia', 2, 1));
-carrinho.adiciona(new Item('Uva', 4.3, 2));
-carrinho.adiciona(new Item('Açaí', 3, 5));
+cart.add(new Item('Maçã', 1, 3))
+cart.add(new Item('Banana', 1.4, 5))
+cart.add(new Item('Melancia', 2, 1))
+cart.add(new Item('Uva', 4.3, 2))
+cart.add(new Item('Açaí', 3, 5))
 
-carrinho.adicionaFrete(15);
+cart.addDeliveryFee(15)
 
-carrinho.calculaSubtotal();
+cart.calculateTotal()
 
-carrinho.finalizaCompra();
+cart.finishPurchase()
 
-console.log(carrinho);
+console.log(cart)
